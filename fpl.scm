@@ -5,3 +5,10 @@
    (else L)
   )
 )
+
+(define (sum-up-numbers-simple L)
+  (cond
+   ((null? L) 0)
+   ((number? (car L)) (+ (car L) (sum-up-numbers-simple(cdr L))))
+   (else (sum-up-numbers-simple(cdr L))))
+)
