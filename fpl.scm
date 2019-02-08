@@ -37,3 +37,12 @@
    (else (hasNumbers (cdr L)))
   )
 )
+
+(define (numsAboveMin L minOfList)
+  (cond
+    ((null? L) '())
+    ((and (number? (car L)) (> (car L) minOfList))
+     (cons (car L) (numsAboveMin (cdr L) minOfList)))
+    (else (numsAboveMin (cdr L) minOfList))
+  )
+)
