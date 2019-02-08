@@ -21,3 +21,11 @@
    (else (sum-up-numbers-general(cdr L)))
   )
 )
+
+(define (listMin L)
+  (cond
+   ((null? L) 99999999999999999)
+   ((number? (car L)) ( min (car L) (listMin(cdr L))))
+   (else (listMin (cdr L)))
+  )
+)
