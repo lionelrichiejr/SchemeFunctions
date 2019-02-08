@@ -29,3 +29,11 @@
    (else (listMin (cdr L)))
   )
 )
+
+(define (hasNumbers L)
+  (cond
+   ((null? L) #F)
+   ((number? (car L)) #T)
+   (else (hasNumbers (cdr L)))
+  )
+)
