@@ -46,3 +46,14 @@
     (else (numsAboveMin (cdr L) minOfList))
   )
 )
+
+(define (min-above-min L1 L2)
+  (define higherNums (numsAboveMin L1 (listMin L2)))
+  (cond
+   ((not (or (hasNumbers L2) (hasNumbers L1))) #F)
+   ((not (hasNumbers L1)) #F)
+   ((not (hasNumbers L2)) (listMin L1))
+   ((eq? higherNums '()) #F)
+   (else (listMin higherNums))
+    )
+  )
